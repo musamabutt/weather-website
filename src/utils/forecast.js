@@ -8,7 +8,7 @@ const forecast = (latitiude,longitude,callback) => {
         } else if (response.body.error) {
             callback("Unable to find the location.Try another search", undefined);
         } else {
-            callback(undefined,response.body.current.weather_descriptions+".Current Temprature is "+response.body.current.temperature + " "+"and Precip is "+response.body.current.precip);
+            callback(undefined,response.body.current.weather_descriptions[0]+".Current Temprature is "+response.body.current.temperature + " "+"and Precip is "+response.body.current.precip+". The humidity is "+response.body.current.humidity+" %");
         }
     });
 
