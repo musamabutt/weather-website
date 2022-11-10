@@ -7,6 +7,7 @@ const { query } = require('express');
 const request = require('request');
 const geocode = require('./utils/geocode.js');
 const forecast = require('./utils/forecast.js');
+const port = process.env.PORT || 3000;
 
 /**
  * Define paths for Express config
@@ -124,8 +125,8 @@ app.get('*', (req, res) => {
     res.send('<h1>404 Error</h1>');
 });
 
-app.listen(3000, () => {
-    console.log('Server is up on port 3000');
+app.listen(port, () => {
+    console.log('Server is up on port'+ port);
 });
 
 
